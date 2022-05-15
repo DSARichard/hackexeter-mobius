@@ -1,15 +1,17 @@
 import numpy as np
 import turtle
 import random
+
 t = turtle.Turtle()
 s = turtle.Screen()
 t.ht()
-print("TEAM MEMBERS: Richard, William, Michael, Andy")
+
+print("TEAM MEMBERS: Richard, William, Michael, Andy.")
 print("The Möbius strip is a symbol of unity.")
 print("After you go around it once, it flips. :D")
 print("To make this in our code, after you pass a complete loop it flips over.")
 print("Can you find the secret message?")
-print("Don't press e or q key no matter what")
+print("Don't press the e or q key no matter what! :D")
 print("Use arrow keys or WASD.")
 
 mob = [
@@ -22,7 +24,7 @@ mob = [
   [1, 1, 1, 0, 0],
   [0, 0, 0, 0, 0],
   [0, 1, 0, 0, 1],
-  [1, 0, 1, 0, 0],#
+  [1, 0, 1, 0, 0], #
   [0, 0, 0, 0, 1],
   [1, 0, 1, 1, 1],
   [1, 0, 1, 0, 0],
@@ -30,9 +32,9 @@ mob = [
   [0, 1, 1, 1, 0],
   [0, 0, 0, 1, 0],
   [0, 1, 0, 1, 0],
-  [0, 1, 0, 1, 0],#
+  [0, 1, 0, 1, 0], #
   [0, 1, 0, 0, 0],
-  [0, 0, 0, 1, 0],# START
+  [0, 0, 0, 1, 0], #start
   [0, 1, 0, 1, 0],
   [0, 1, 0, 1, 0],
   [0, 0, 1, 0, 0],
@@ -48,8 +50,8 @@ mob = [
   [0, 0, 1, 0, 0],
   [0, 0, 1, 0, 0],
   [0, 0, 1, 0, 0],
-  [0, 0, 1, 0, 0],#end
-  [1, 1, 1, 1, 0],#start2
+  [0, 0, 1, 0, 0], # end
+  [1, 1, 1, 1, 0], # start2
   [0, 0, 1, 0, 0],
   [0, 0, 1, 1, 0],
   [0, 0, 1, 1, 0],
@@ -60,7 +62,7 @@ mob = [
   [0, 0, 0, 0, 1],
   [0, 0, 1, 0, 0],
   [0, 0, 1, 0, 0],
-  [0, 0, 1, 0, 0],#end
+  [0, 0, 1, 0, 0], # end2
   [0, 0, 1, 0, 1],
   [0, 0, 1, 0, 0],
   [0, 0, 1, 0, 0],
@@ -138,8 +140,13 @@ pos = 0
 mob_sect = 0
 color_lst = ["silver", "dark gray", "gray", "dim gray", "light slate gray", "slate gray", "light steel blue", "cornflower blue", "royal blue", "blue", "medium blue", "navy", "dark blue", "midnight blue", "light blue", "deep sky blue", "dodger blue", "powder blue", "sky blue", "light sky blue", "steel blue", "cyan", "pale turquoise", "dark turquoise", "turquoise", "medium turquoise", "light sea green", "cadet blue", "dark cyan", "teal", "dark slate gray", "aquamarine", "medium aquamarine", "dark sea green", "medium sea green", "sea green", "pale green", "light green", "medium spring green", "spring green", "lime green", "green", "forest green", "dark green", "lawn green", "lime", "khaki", "yellow", "gold", "goldenrod", "burlywood", "saddle brown", "sandy brown", "orange", "dark orange", "chocolate", "firebrick", "dark red", "maroon", "brown", "coral", "tomato", "orange red", "red", "crimson", "deep pink", "hot pink", "medium violet red", "purple", "dark magenta", "violet", "magenta", "dark orchid", "dark violet", "blue violet", "blue violet", "rebecca purple", "rebecca purple", "rebecca purple", "slate blue", "dark slate blue"]
 crazycolors = False;
+
 def mob_update(colors):
   global crazycolors
+  t.pu()
+  t.goto(130, 0)
+  t.pd()
+  t.write("Don't press q or e! :D", font = ("Arial", 11, "normal"))
   t.pu()
   t.goto(-0.5*mob_wid*grid_size, -0.5*mob_wid*grid_size)
   t.pd()
@@ -206,14 +213,14 @@ def move_vertical(x, y, pos, dir):
 
 def move(x, y, key):
   global crazycolors
-  if(key in ["Right", "Left", "a", "d"]):
+  if(key in ["Right", "Left", "d", "a"]):
     dir = 1 if(key in ["Right", "d"]) else -1
     move_lateral(x, y, pos, dir)
   elif(key in ["Up", "Down", "w", "s"]):
     dir = 1 if(key in ["Up", "w"]) else -1
     move_vertical(x, y, pos, dir)
   elif(key == "e"):
-    print("\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a")
+    print("\a"*600)
   elif (key == "q"):
     crazycolors = not crazycolors
 
@@ -222,9 +229,9 @@ def get_move(x, y, key):
 
 while(True):
   mob_update(get_colors(pos))
-
+  
   y, x = np.array(np.where(mob == 2)).T[0]
-  for key in ["Right", "Left", "Up", "Down", "e", "w", "a", "s", "d", "q"]:
+  for key in ["Right", "Left", "Up", "Down", "w", "s", "d", "a", "e", "q"]:
     get_move(x, y, key)
   s.listen()
   
